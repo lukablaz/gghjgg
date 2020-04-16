@@ -1,0 +1,22 @@
+1.SELECT * FROM `orderdetails`
+CROSS JOIN orders;
+2.SELECT * FROM payments
+INNER JOIN customers
+on customers.customerNumber=payments.customerNumber;
+3.SELECT * FROM `products`
+LEFT JOIN  productlines
+ON products.productLine=productlines.productLine;
+4.SELECT * FROM `offices`
+RIGHT JOIN employees
+ON employees.officeCode=offices.officeCode;
+5. SELECT e.lastName,e.firstName,e.employeeNumber,e.reportsTo,m.firstName,m.lastName,m.employeeNumber,m.reportsTo 
+FROM `employees` e 
+INNER JOIN employees m 
+ON m.employeeNumber=e.reportsTo;
+6. SELECT `firstName` 
+FROM employees
+ WHERE `officeCode`=4 
+UNION
+ SELECT `firstName` 
+FROM employees 
+WHERE `officeCode`=2
